@@ -23,4 +23,8 @@ class Euler001Test extends FunSuite {
 
     assert(result == expected)
   }
+
+  test("print solution") {
+    println(sut.solution())
+  }
 }
