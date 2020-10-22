@@ -1,17 +1,7 @@
 package euler
 
-class Euler002 {
-  def generateHead(numberOfTerms: Int): List[Int] = {
-    (1 to numberOfTerms)
-      .foldLeft(List[Int]()) ((c, _) => generateNext(c))
-      .reverse
-  }
+import java.util.function.Predicate
 
-  private def generateNext(soFar: List[Int]): List[Int] = {
-    soFar.length match {
-      case 0 => List(1)
-      case 1 => 2 :: soFar
-      case _ => soFar.take(2).sum :: soFar
-    }
-  }
+class Euler002 {
+  def fibs(current: Int = 0, next: Int = 1): LazyList[Int] = LazyList.cons(current, fibs(next, current + next))
 }
