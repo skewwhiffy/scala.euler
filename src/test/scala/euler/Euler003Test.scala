@@ -15,4 +15,9 @@ class Euler003Test extends FunSuite {
       sut.primeFactors(13195)
     }
   }
+
+  test("print solution") {
+    val result = sut.primeFactors(600851475143L).last
+    println(result)
+  }
 }
